@@ -54,6 +54,9 @@
 
         <!-- JavaScript -->
         <script>
+            /* Javascript Code to add image from image tag to parents background image
+            and remove that image tag from DOM 
+            -- ADD THIS JAVASCRIPT if YOU WANT TO ADD IMAGES driect in MarkUP as done above*/
             const img_wrap_tag = document.getElementById("image-wrap");
             const img_src = img_wrap_tag.children[0].attributes[0].value;
             img_wrap_tag.style.backgroundImage = "url('" + img_src + "')";
