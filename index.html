@@ -6,9 +6,47 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Image Slide Effect</title>
+        <style>
+            .image-card-wrap {
+                /* Width & Height Needs to be specified according to your requirments
+                REQUIRED */
+                width: 500px;
+                height: 500px;
+                /* Additional CSS for Demo Purpose - Use As you like */
+                border: 2px solid #163666;
+                overflow: hidden;
+                border-radius: 5px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .image-wrap {
+                /* Required Fixed CSS for Image Slide Effect */
+                width: 100%;
+                height: 100%;
+                background-image: url("./PoliticalTemp1.png");
+                background-size: cover;
+                background-position: left top;
+                background-repeat: no-repeat;
+                transition: all 15s ease-out;
+            }
+
+            .image-card-wrap:hover .image-wrap {
+                /* Slide Background Image On Hover Effect*/
+                background-position: left 100%;
+            }
+
+        </style>
     </head>
 
     <body>
+        <!-- Required Image Tags -->
+        <div class="image-card-wrap">
+            <div class="image-wrap">
+            </div>
+        </div>
 
     </body>
 
