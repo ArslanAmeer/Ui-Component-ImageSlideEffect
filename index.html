@@ -25,18 +25,18 @@
                 transform: translate(-50%, -50%);
             }
 
-            .image-wrap {
+            #image-wrap {
                 /* Required Fixed CSS for Image Slide Effect */
                 width: 100%;
                 height: 100%;
-                background-image: url("./PoliticalTemp1.png");
+                /*background-image will be added from Markup through Javascript*/
                 background-size: cover;
                 background-position: left top;
                 background-repeat: no-repeat;
                 transition: all 15s ease-out;
             }
 
-            .image-card-wrap:hover .image-wrap {
+            .image-card-wrap:hover #image-wrap {
                 /* Slide Background Image On Hover Effect*/
                 background-position: left 100%;
             }
@@ -47,10 +47,19 @@
     <body>
         <!-- Required Image Tags -->
         <div class="image-card-wrap">
-            <div class="image-wrap">
+            <div id="image-wrap">
+                <img src="./PoliticalTemp1.png">
             </div>
         </div>
 
+        <!-- JavaScript -->
+        <script>
+            const img_wrap_tag = document.getElementById("image-wrap");
+            const img_src = img_wrap_tag.children[0].attributes[0].value;
+            img_wrap_tag.style.backgroundImage = "url('" + img_src + "')";
+            img_wrap_tag.children[0].remove();
+
+        </script>
     </body>
 
 </html>
